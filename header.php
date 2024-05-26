@@ -16,6 +16,7 @@
     <!-- 使用url函数转换相关路径 -->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('static/bootstrap/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('static/iconfont/iconfont.css'); ?>" rel="preload">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('static/css/github-markdown-light.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('static/css/common.css'); ?>">
 
     <!-- 通过自有函数输出HTML头部信息 -->

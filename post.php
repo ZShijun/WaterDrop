@@ -11,10 +11,10 @@
                 <p class="m-0"><i class="set-likes iconfont icon-like-fill" data-cid="<?php $this->cid(); ?>"></i><span class="get-likes ms-1" data-cid="<?php $this->cid(); ?>"><?php $this->likesNum() ?></span></p>
             <?php endif; ?>
         </div>
-        <div class="post-content" itemprop="articleBody">
+        <div class="markdown-body post-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
-        <p itemprop="keywords" class="tags"><i class="iconfont icon-tags-fill text-primary"></i><?php $this->tags(', ', true, ''); ?></p>
+        <p itemprop="keywords" class="tags mt-3"><i class="iconfont icon-tags-fill text-primary"></i><?php $this->tags(', ', true, ''); ?></p>
         <ul class="post-near mt-4 pt-2 list-unstyled d-flex justify-content-between align-items-center border-top">
             <li class="d-flex flex-column">
                 <span class="text-secondary"><?php _e('« 上一篇'); ?></span><?php $this->thePrev('%s', _t('没有了')); ?>

@@ -15,7 +15,7 @@
                 <p class="m-0 small"><i class="iconfont icon-time"></i><span class="ms-1"><?php $this->date('Y-m-d') ?></span></p>
             </div>
         </h4>
-        <div class="post-content" itemprop="articleBody">
+        <div class="markdown-body post-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
     </article>
