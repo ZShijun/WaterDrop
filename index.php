@@ -45,7 +45,7 @@ $this->need('header.php');
                             <h2 class="post-title fs-5">
                                 <a title="<?php $this->title() ?>" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
                             </h2>
-                            <div class="post-content" itemprop="articleBody">
+                            <div class="post-content lh-lg" itemprop="articleBody">
                                 <?php $this->excerpt(160, '...'); ?>
                             </div>
                             <div class="text-secondary mt-2 d-flex justify-content-between align-items-center">
