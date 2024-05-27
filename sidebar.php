@@ -20,7 +20,7 @@
                             <img class="rounded-circle border border-white shadow-sm" src="<?= getGravatar($comments->mail); ?>" onerror="this.onerror=null; this.src='<?= getDefaultGravatar() ?>'" style="width: 48px;height:48px;" alt="<?php $comments->author(false); ?>" />
                             <div class="ms-3 overflow-hidden flex-fill">
                                 <div class="d-flex justify-content-between align-items-end">
-                                    <h5 class="mb-0"><?php $comments->author(false); ?></h5>
+                                    <h2 class="mb-0 fs-6"><?php $comments->author(false); ?></h2>
                                     <small class="text-body-secondary"><?php $comments->date('Y-m-d') ?></small>
                                 </div>
                                 <small class="d-block text-body-secondary text-truncate pt-1"><?php $comments->excerpt(20, '...'); ?></small>

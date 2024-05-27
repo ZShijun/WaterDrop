@@ -42,7 +42,7 @@ $this->need('header.php');
                             </div>
                         </div>
                         <div>
-                            <h2 class="post-title fs-4">
+                            <h2 class="post-title fs-5">
                                 <a title="<?php $this->title() ?>" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
                             </h2>
                             <div class="post-content" itemprop="articleBody">
