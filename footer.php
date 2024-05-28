@@ -14,7 +14,7 @@
         </p>
         <p class="m-0">
             Powered by <a class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="http://typecho.org" target="_blank">Typecho</a>
-            Theme by <a class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="https://ilaozhu.com/archives/2067/" target="_blank">WaterDrop</a>
+            Theme by <a class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover" href="https://ilaozhu.com/archives/2069" target="_blank">WaterDrop</a>
         </p>
     </div>
 </footer><!-- end #footer -->
