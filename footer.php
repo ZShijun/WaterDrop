@@ -47,7 +47,8 @@ if ($this->options->footerJs) {
             "meta[charset]",
             "header",
             "#main"
-        ]
+        ],
+        cacheBust: false
     });
 
     document.addEventListener('pjax:send', () => {
