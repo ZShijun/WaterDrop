@@ -11,24 +11,31 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form)
 {
+    $faviconUrl = new \Typecho\Widget\Helper\Form\Element\Text(
+        'faviconUrl',
+        null,
+        null,
+        _t('站点图标'),
+        _t('请填写站点图标地址, 不填则默认获取站点根路径的favicon.ico')
+    );
+    $form->addInput($faviconUrl);
+
     $logoUrl = new Text(
         'logoUrl',
         null,
         '/usr/themes/WaterDrop/static/images/logo.png',
-        _t('LOGO 地址'),
-        _t('请填写站点 LOGO 图片地址, 如果不填则显示文本标题')
+        _t('网站 LOGO'),
+        _t('请填写网站 LOGO 图片地址, 如果不填则显示文本标题')
     );
-
     $form->addInput($logoUrl);
 
     $avatar = new Text(
         'avatar',
         null,
-        '/usr/themes/WaterDrop/static/images/avatar.jpg',
-        _t('头像地址'),
-        _t('请填写一个图片 URL 地址, 以修改头像')
+        null,
+        _t('作者头像'),
+        _t('请填写一个图片 URL 地址, 以修改作者头像')
     );
-
     $form->addInput($avatar);
 
     $showEmail = new Radio(
@@ -49,7 +56,6 @@ function themeConfig($form)
         _t('Github 主页'),
         _t('请填写你的 Github 主页地址')
     );
-
     $form->addInput($github);
 
     $bilibili = new Text(
@@ -59,8 +65,8 @@ function themeConfig($form)
         _t('哔哩哔哩 主页'),
         _t('请填写你的 哔哩哔哩 主页地址')
     );
-
     $form->addInput($bilibili);
+
     $youtube = new Text(
         'youtube',
         null,
@@ -68,7 +74,6 @@ function themeConfig($form)
         _t('YouTube 主页'),
         _t('请填写你的 YouTube 主页地址')
     );
-
     $form->addInput($youtube);
 
     $notice = new Text(
@@ -130,6 +135,7 @@ function themeConfig($form)
         _t('请填入形如"粤ICP备xxx号-1"的备案号')
     );
     $form->addInput($beian);
+
     $footerJs = new Textarea(
         'footerJs',
         null,

@@ -13,6 +13,9 @@
                 'author'   => _t('%s 发布的文章')
             ], '', ' - '); ?><?php $this->options->title(); ?></title>
 
+    <?php if ($this->options->faviconUrl) : ?>
+        <link rel="icon" href="<?php $this->options->faviconUrl(); ?>" />
+    <?php endif; ?>
     <!-- 使用url函数转换相关路径 -->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('static/bootstrap/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('static/iconfont/iconfont.css'); ?>" rel="preload">
@@ -39,7 +42,7 @@
                 <span class="navbar-toggler-icon fs-6"></span>
             </button>
             <a class="no-pjax navbar-brand d-none d-sm-block" href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title() ?>">
-                <?php if (!empty($this->options->logoUrl)) : ?>
+                <?php if ($this->options->logoUrl) : ?>
                     <img style="height: 2rem;" src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>" />
                 <?php else : ?>
                     <?php $this->options->title() ?>
