@@ -214,7 +214,6 @@
 }
 
 .post-list .post-content {
-  line-height: 1.625;
   -webkit-line-clamp: 3;
 }
 
@@ -259,6 +258,63 @@
   text-decoration: underline;
   text-underline-offset: 0.25em;
   text-decoration-color: #49b1f5;
+}
+
+.works .card {
+  overflow: hidden;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.works .card .card-body {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.works .card .card-body .card-text {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0.95rem;
+  overflow: auto;
+  opacity: 0;
+}
+
+.works .card .card-title {
+  box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.works .card,
+.works .card .card-body .card-img,
+.works .card .card-body .card-text,
+.works .card .card-title {
+  transition: all 0.3s ease-in-out;
+}
+
+.works .card:hover {
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.5rem);
+}
+
+.works .card:hover .card-img {
+  transform: scale(1.1);
+}
+
+.works .card:hover .card-text {
+  top: 0;
+  opacity: 0.75;
+}
+
+.works .card .card-title:hover {
+  color: #49b1f5;
+}
+
+.works .card .card-body .card-text::-webkit-scrollbar {
+  display: none; /* 隐藏滚动条 */
 }
 
 .back-to-top {
