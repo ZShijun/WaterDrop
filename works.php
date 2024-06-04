@@ -20,7 +20,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <script>
         (function() {
             let works = document.querySelector(".works ul");
-            console.log(works);
             if (works) {
                 let lis = works.querySelectorAll("li");
                 let str = '';
@@ -34,7 +33,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                             <img src="${img}" class="card-img" alt="${title}">
                             <p class="card-text text-bg-dark p-3">${desc}</p>
                         </div>
-                        <h5 class="card-title text-truncate m-0 p-3" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="${title}">${title}</h5>
+                        <h5 class="card-title text-truncate m-0 p-3" title="${title}">${title}</h5>
                     </a></div>`;
                 }
                 works.parentNode.innerHTML = str;
