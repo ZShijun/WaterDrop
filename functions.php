@@ -204,11 +204,7 @@ function getDefaultCover()
         }
     }
 
-    return '/usr/themes/' . $options->theme . '/post-default-cover.png';
-}
-
-function getDefaultCoverUrl()
-{
+    return '/usr/themes/' . $options->theme . '/static/images/post-default-cover.png';
 }
 
 function themeFields($layout)
