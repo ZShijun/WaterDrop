@@ -18,7 +18,6 @@
         </p>
     </div>
 </footer><!-- end #footer -->
-<script src="<?php $this->options->themeUrl('static/bootstrap/bootstrap.bundle.min.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('static/js/pjax.min.js'); ?>"></script>
 <?php $this->footer(); ?>
 <?php
@@ -27,9 +26,6 @@ if ($this->options->footerJs) {
 }
 ?>
 <script>
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
     const loader = document.querySelector("#loader");
     const body = document.querySelector("#body");
     const loaderSpans = loader.children;

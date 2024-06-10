@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('static/css/github-markdown-light.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('static/css/common.css'); ?>">
 
+    <script src="<?php $this->options->themeUrl('static/bootstrap/bootstrap.bundle.min.js'); ?>"></script>
+
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
 </head>

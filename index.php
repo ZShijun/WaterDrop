@@ -41,14 +41,14 @@ $this->need('header.php');
                                 <?php $this->category(''); ?>
                             </div>
                         </div>
-                        <div>
-                            <h2 class="post-title fs-5">
-                                <a title="<?php $this->title() ?>" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
-                            </h2>
-                            <div class="post-content lh-lg" itemprop="articleBody">
-                                <?php $this->excerpt(160, '...'); ?>
+                        <div class="d-flex flex-column align-items-start">
+                            <h3 class="post-title text-dark">
+                                <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<?php $this->title() ?>" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
+                            </h3>
+                            <div class="post-content text-secondary lh-lg small" itemprop="articleBody">
+                                <?php $this->excerpt(200, '...'); ?>
                             </div>
-                            <div class="text-secondary mt-2 d-flex justify-content-between align-items-center">
+                            <div class="align-self-stretch text-secondary mt-2 d-flex justify-content-between align-items-center">
                                 <small><?php $this->date('Y-m-d') ?></small>
                                 <div class="d-flex align-items-center gap-2">
                                     <?php if (\Typecho\Plugin::exists('LZStat')) : ?>
@@ -71,6 +71,12 @@ $this->need('header.php');
     <nav aria-label="Page navigation" class="pjax">
         <?php $this->pageNav('&laquo;', '&raquo;'); ?>
     </nav>
+    <script>
+        (function() {
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+        }())
+    </script>
 </div><!-- end #main-->
 
 <?php $this->need('sidebar.php'); ?>
