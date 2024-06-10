@@ -142,27 +142,25 @@
   background-color: rgba(207, 226, 255, 1);
 }
 
+.rank a::before {
+  content: "";
+  display: inline-block;
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: #212529;
+  border-radius: 50%;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+}
+
 .post-list .post {
   display: grid;
   grid-template-columns: 30% 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .post-list .post:hover {
   background-color: #f8f9fa;
-}
-.post-list .post:nth-of-type(even) {
-  grid-template-columns: 1fr 30%;
-}
-.post-list .post:nth-of-type(even) > div:first-of-type {
-  order: 1;
-}
-
-.post-list .post:nth-of-type(odd) .categories {
-  right: 0;
-}
-.post-list .post:nth-of-type(even) .categories {
-  left: 0;
 }
 
 .banner img,

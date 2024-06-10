@@ -32,7 +32,7 @@ $this->need('header.php');
         <div class="post-list list-group list-group-flush">
             <?php if ($this->have()) : ?>
                 <?php while ($this->next()) : ?>
-                    <article class="pjax post list-group-item py-3" itemscope itemtype="http://schema.org/BlogPosting">
+                    <article class="pjax post list-group-item p-4" itemscope itemtype="http://schema.org/BlogPosting">
                         <div class="position-relative">
                             <a class="position-absolute t-0 start-0 w-100 h-100 rounded overflow-hidden" href="<?php $this->permalink() ?>" title="<?php $this->title() ?>">
                                 <img class="object-fit-cover w-100 h-100" src="<?= getPostCover($this); ?>" alt="<?php $this->title() ?>" onerror="this.onerror=null; this.src='<?= getDefaultCover(); ?>'">
@@ -48,7 +48,7 @@ $this->need('header.php');
                             <div class="post-content text-secondary lh-lg small" itemprop="articleBody">
                                 <?php $this->excerpt(200, '...'); ?>
                             </div>
-                            <div class="align-self-stretch text-secondary mt-2 d-flex justify-content-between align-items-center">
+                            <div class="align-self-stretch text-secondary mt-3 d-flex justify-content-between align-items-center">
                                 <small><?php $this->date('Y-m-d') ?></small>
                                 <div class="d-flex align-items-center gap-2">
                                     <?php if (\Typecho\Plugin::exists('LZStat')) : ?>
