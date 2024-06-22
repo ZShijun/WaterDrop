@@ -11,7 +11,7 @@
                     <?php $posts = $rank["posts"]; ?>
                     <?php while ($posts->next()) : ?>
                         <li class="list-group-item border-0">
-                            <a href="<?php $posts->permalink() ?>" class="pjax d-inline-block mw-100 link-dark text-decoration-none text-truncate" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<?php $posts->title() ?>">
+                            <a href="<?php $posts->permalink() ?>" class="pjax d-inline-block mw-100 link-dark text-decoration-none text-truncate" title="<?php $posts->title() ?>">
                                 <?php $posts->title() ?>
                             </a>
                             <div class="text-secondary small d-flex justify-content-between align-items-center">

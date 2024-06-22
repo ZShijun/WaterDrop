@@ -43,7 +43,7 @@ $this->need('header.php');
                         </div>
                         <div class="d-flex flex-column align-items-start">
                             <h3 class="post-title text-dark">
-                                <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<?php $this->title() ?>" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
+                                <a title="<?php $this->title() ?>" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
                             </h3>
                             <div class="post-content text-secondary lh-lg small" itemprop="articleBody">
                                 <?php $this->excerpt(200, '...'); ?>
@@ -71,12 +71,6 @@ $this->need('header.php');
     <nav aria-label="Page navigation" class="pjax">
         <?php $this->pageNav('&laquo;', '&raquo;'); ?>
     </nav>
-    <script>
-        (function() {
-            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-        }())
-    </script>
 </div><!-- end #main-->
 
 <?php $this->need('sidebar.php'); ?>
