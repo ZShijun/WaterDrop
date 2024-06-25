@@ -115,14 +115,16 @@
 }
 
 .post-near a,
-.post-content a {
+.post-content a,
+.post-copyright a {
   color: rgba(73, 177, 245, 0.8);
   text-decoration-color: rgba(73, 177, 245, 0);
   text-underline-offset: 0.25em;
   transition: all 0.3s ease-in-out;
 }
 .post-near a:hover,
-.post-content a:hover {
+.post-content a:hover,
+.post-copyright a:hover {
   color: rgba(73, 177, 245, 1);
   text-decoration-color: rgba(73, 177, 245, 1);
 }
