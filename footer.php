@@ -19,6 +19,11 @@
     </div>
 </footer><!-- end #footer -->
 <script src="<?php $this->options->themeUrl('static/js/pjax.min.js'); ?>"></script>
+<?php
+$googleAd = getGoogleAd();
+if ($googleAd['showAd']) : ?>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-<?= $googleAd['publisher']; ?>" crossorigin="anonymous"></script>
+<?php endif; ?>
 <?php $this->footer(); ?>
 <?php
 if ($this->options->footerJs) {

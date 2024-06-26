@@ -136,6 +136,15 @@ function themeConfig($form)
     );
     $form->addInput($beian);
 
+    $googleAd = new Textarea(
+        'googleAd',
+        null,
+        null,
+        _t('谷歌广告'),
+        _t('主题预设了三个Google AdSense广告位，不填则不显示广告，格式：{"publisher":"pub-xxx", "sidebar":"xxx","post1":"xxx", "post2":"xxx"}，注意：由于SPA与Google Ads的兼容性存在问题，所以当使用Google Ads时，会禁用打开文章详情页的PJAX功能，需要牺牲一定的性能，请自行权衡')
+    );
+    $form->addInput($googleAd);
+
     $footerJs = new Textarea(
         'footerJs',
         null,
@@ -145,7 +154,6 @@ function themeConfig($form)
     );
     $form->addInput($footerJs);
 }
-
 
 function getGravatar($email, $s = 96, $d = 'mp', $r = 'g')
 {
@@ -205,6 +213,38 @@ function getDefaultCover()
     }
 
     return '/usr/themes/' . $options->theme . '/static/images/post-default-cover.png';
+}
+
+function getGoogleAd()
+{
+    static $settings = [];
+    if (!empty($settings)) {
+        return $settings;
+    }
+
+    $options = Widget::widget(Options::class);
+    if (empty($options->googleAd)) {
+        $settings = [
+            'showAd' => false
+        ];
+        return $settings;
+    }
+
+    $googleAd = json_decode($options->googleAd, true);
+    if (!empty($googleAd) && !empty($googleAd['publisher']) && strpos($googleAd['publisher'], 'pub-') === 0) {
+        $settings = [
+            'showAd' => true,
+            'publisher' => $googleAd['publisher'],
+            'sidebar' => $googleAd['sidebar'],
+            'post1' => $googleAd['post1'],
+            'post2' => $googleAd['post2']
+        ];
+    } else {
+        $settings = [
+            'showAd' => false
+        ];
+    }
+    return $settings;
 }
 
 function themeFields($layout)

@@ -8,10 +8,13 @@
                 <div class="p-3 text-center text-body-secondary">暂无数据</div>
             <?php else : ?>
                 <ul class="list-group rounded-bottom p-1">
-                    <?php $posts = $rank["posts"]; ?>
+                    <?php
+                    $posts = $rank["posts"];
+                    $googleAd = getGoogleAd();
+                    ?>
                     <?php while ($posts->next()) : ?>
                         <li class="list-group-item border-0">
-                            <a href="<?php $posts->permalink() ?>" class="pjax d-inline-block mw-100 link-dark text-decoration-none text-truncate" title="<?php $posts->title() ?>">
+                            <a href="<?php $posts->permalink() ?>" class="<?php if (!$googleAd['showAd']) : ?>pjax <?php endif; ?>d-inline-block mw-100 link-dark text-decoration-none text-truncate" title="<?php $posts->title() ?>">
                                 <?php $posts->title() ?>
                             </a>
                             <div class="text-secondary small d-flex justify-content-between align-items-center">

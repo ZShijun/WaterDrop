@@ -31,8 +31,9 @@ $this->need('header.php');
         <?php endif; ?>
         <div class="post-list list-group list-group-flush">
             <?php if ($this->have()) : ?>
+                <?php $googleAd = getGoogleAd(); ?>
                 <?php while ($this->next()) : ?>
-                    <article class="pjax post list-group-item p-4" itemscope itemtype="http://schema.org/BlogPosting">
+                    <article class="<?php if (!$googleAd['showAd']) : ?>pjax <?php endif; ?>post list-group-item p-4" itemscope itemtype="http://schema.org/BlogPosting">
                         <div class="position-relative">
                             <a class="position-absolute t-0 start-0 w-100 h-100 rounded overflow-hidden" href="<?php $this->permalink() ?>" title="<?php $this->title() ?>">
                                 <img class="object-fit-cover w-100 h-100" src="<?= getPostCover($this); ?>" alt="<?php $this->title() ?>" onerror="this.onerror=null; this.src='<?= getDefaultCover(); ?>'">
