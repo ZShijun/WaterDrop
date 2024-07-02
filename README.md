@@ -2,9 +2,13 @@
 
 ## 写在前面
 
-本主题是基于`typecho 1.3.0`版本，并采用`php 8`的语法开发的，如果您的`typecho`版本低于`1.3.0`，请先升级到该版本，否则可能存在兼容性问题。
+本主题是基于`typecho 1.3.0`版本，并采用`php 8`的语法开发的，如果您的`typecho`版本低于`1.3.0`，请先升级到该版本，否则可能存在兼容性问题（如浏览，点赞失效）。
 
-由于`typecho 1.3.0`目前还是`alpha`版，保险起见，你可以直接通过 <https://pan.baidu.com/s/1kuCOQ2KrRCjT79LTLGFfcQ?pwd=yyds> 下载，该代码是从作者官方镜像`joyqi/typecho:nightly-php8.2-fpm`中复制出来的，并且未作任何修改。这也是我的博客正在运行的版本，已经经过了我和朋友们的检验，目前良好运行，可以放心使用。
+由于`typecho 1.3.0`目前还是`alpha`版，保险起见，你可以直接通过如下地址下载：
+
+<https://pan.baidu.com/s/1kuCOQ2KrRCjT79LTLGFfcQ?pwd=yyds>
+
+该代码是从作者官方镜像`joyqi/typecho:nightly-php8.2-fpm`中复制出来的，未作任何修改。我的网站正在运行的也是这个版本，已经经过了我和朋友们的检验，目前运行良好，可以放心使用。
 
 ## 主题介绍
 
