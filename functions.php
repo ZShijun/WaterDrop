@@ -58,6 +58,15 @@ function themeConfig($form)
     );
     $form->addInput($github);
 
+    $weibo = new Text(
+        'weibo',
+        null,
+        null,
+        _t('微博 主页'),
+        _t('请填写你的 微博 主页地址')
+    );
+    $form->addInput($weibo);
+
     $bilibili = new Text(
         'bilibili',
         null,
