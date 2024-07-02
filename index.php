@@ -5,7 +5,7 @@
  *
  * @package WaterDrop
  * @author laozhu
- * @version 1.1.2
+ * @version 1.2.0
  * @link https://ilaozhu.com
  */
 
