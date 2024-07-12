@@ -3,14 +3,14 @@
         <h3 class="px-3 py-2 m-0 fs-6 rounded-top" style="background-color:#e7e7e7;"> <i class="iconfont icon-tags-fill me-2"></i><?php _e('标签云'); ?></h3>
         <canvas id="tag-cloud" height="300" style="width: 100%;"></canvas>
         <div id="side-tags" class="pjax" style="display: none;">
-            <?php \Widget\Metas\Tag\Cloud::alloc()
+            <?php \Widget\Metas\Tag\Cloud::alloc("limit=50")
                 ->parse('<a href="{permalink}">{name}</a>'); ?>
         </div>
     </section>
     <script src="<?php $this->options->themeUrl('static/js/tagcanvas.min.js'); ?>"></script>
     <script>
         TagCanvas.Start('tag-cloud', 'side-tags', {
-            textColour: '#6c757d',
+            textColour: '#343a40',
             outlineColour: '#49b1f5',
             outlineThickness: 1,
             maxSpeed: 0.03,
