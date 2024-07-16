@@ -1,6 +1,6 @@
 <?php if (!empty($this->options->sidebarBlock) && in_array('ShowTagCloud', $this->options->sidebarBlock)) : ?>
     <section class="bg-white rounded shadow-sm mt-3">
-        <h3 class="px-3 py-2 m-0 fs-6 rounded-top" style="background-color:#e7e7e7;"> <i class="iconfont icon-tags-fill me-2"></i><?php _e('标签云'); ?></h3>
+        <h3 class="px-3 py-2 m-0 fs-6 rounded-top" style="background-color:#e9ecef;"> <i class="iconfont icon-tags-fill me-2"></i><?php _e('标签云'); ?></h3>
         <canvas id="tag-cloud" height="300" style="width: 100%;"></canvas>
         <div id="side-tags" class="pjax" style="display: none;">
             <?php \Widget\Metas\Tag\Cloud::alloc("limit=50")

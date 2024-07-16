@@ -12,7 +12,7 @@
         <?php $this->need('components/rank.php'); ?>
         <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentComments', $this->options->sidebarBlock)) : ?>
             <section class="bg-white rounded shadow-sm mt-3">
-                <h3 class="px-3 py-2 m-0 fs-6 rounded-top" style="background-color:#e7e7e7;"> <i class="iconfont icon-comments me-2"></i><?php _e('最新评论'); ?></h3>
+                <h3 class="px-3 py-2 m-0 fs-6 rounded-top" style="background-color:#e9ecef;"> <i class="iconfont icon-comments me-2"></i><?php _e('最新评论'); ?></h3>
                 <div class="list-group">
                     <?php \Widget\Comments\Recent::alloc()->to($comments); ?>
                     <?php while ($comments->next()) : ?>
@@ -32,7 +32,7 @@
         <?php endif; ?>
         <?php if (!empty($this->options->sidebarBlock) && in_array('ShowCategory', $this->options->sidebarBlock)) : ?>
             <section class="bg-white rounded shadow-sm mt-3">
-                <h3 class="px-3 py-2 m-0 fs-6 rounded-top" style="background-color:#e7e7e7;"> <i class="iconfont icon-category me-2"></i><?php _e('文章分类'); ?></h3>
+                <h3 class="px-3 py-2 m-0 fs-6 rounded-top" style="background-color:#e9ecef;"> <i class="iconfont icon-category me-2"></i><?php _e('文章分类'); ?></h3>
                 <div class="pjax list-group list-group-flush rounded-bottom">
                     <?php \Widget\Metas\Category\Rows::alloc()
                         ->parse('<a href="{permalink}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-4 py-2">{name} <span class="badge text-bg-light rounded-pill">{count}</span></a>');  ?>

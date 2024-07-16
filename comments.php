@@ -2,18 +2,18 @@
 <?php function threadedComments($comments, $options)
 {
 ?>
-    <li class="d-flex gap-2 p-2">
-        <img src="<?= getGravatar($comments->mail); ?>" style="whidth:45px;height:45px;" class="rounded shadow">
+    <li class="d-flex p-2">
+        <img src="<?= getGravatar($comments->mail); ?>" style="whidth:32px;height:32px;transform:scale(1.5);" class="rounded shadow">
         <div id="<?php $comments->theId(); ?>" class="flex-grow-1 overflow-hidden">
             <div>
-                <h5 class="d-flex align-items-center justify-content-between">
+                <h5 class="d-flex align-items-center justify-content-between ps-3 mb-3">
                     <?php $comments->author(false); ?>
                     <?php $comments->reply('<button class="btn btn-sm btn-link text-decoration-none text-secondary">' . _t('回复') . '</button>'); ?>
                 </h5>
                 <div class="bg-light p-2 rounded">
                     <?php $comments->content(); ?>
                 </div>
-                <div class="text-muted fs-6 text-end"><?php $comments->date('Y-m-d H:i'); ?></div>
+                <div class="text-muted text-end small"><?php $comments->date('Y-m-d H:i'); ?></div>
             </div>
             <?php if ($comments->children) { ?>
                 <?php $comments->threadedComments($options); ?>
@@ -21,6 +21,12 @@
         </div>
     </li>
 <?php } ?>
+<style>
+    #comments p {
+        margin-bottom: 0;
+        font-size: 0.95rem;
+    }
+</style>
 <div id="comments" class="mt-3 p-3 bg-white shadow-sm rounded">
     <?php $this->comments()->to($comments); ?>
     <h4 class="d-flex align-items-center"><?php _e('评论'); ?><span class="ms-1 text-secondary fs-6"><?php $this->commentsNum(); ?></span></h4>
