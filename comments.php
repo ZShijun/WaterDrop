@@ -3,7 +3,7 @@
 {
 ?>
     <li class="d-flex p-2">
-        <img src="<?= getGravatar($comments->mail); ?>" style="whidth:32px;height:32px;transform:scale(1.5);" class="rounded shadow">
+        <img src="<?= getGravatar($comments->mail); ?>" style="whidth:24px;height:24px;transform:scale(2);" class="rounded shadow-sm">
         <div id="<?php $comments->theId(); ?>" class="flex-grow-1 overflow-hidden">
             <div>
                 <h5 class="d-flex align-items-center justify-content-between ps-3 mb-3">
