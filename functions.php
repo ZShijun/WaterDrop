@@ -23,7 +23,7 @@ function themeConfig($form)
     $logoUrl = new Text(
         'logoUrl',
         null,
-        '/usr/themes/WaterDrop/static/images/logo.png',
+        null,
         _t('网站 LOGO'),
         _t('请填写网站 LOGO 图片地址, 如果不填则显示文本标题')
     );

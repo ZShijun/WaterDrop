@@ -188,6 +188,7 @@
 .post-list .post-title a {
   color: #212529;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
 }
 
 .post-list .post-title a,
@@ -215,6 +216,8 @@
 
 .post-list .post-content {
   -webkit-line-clamp: 3;
+  line-clamp: 3;
+  height: 6em;
 }
 
 .links ul {
