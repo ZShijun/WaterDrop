@@ -24,4 +24,9 @@
             <i class="iconfont icon-youtube fs-5"></i>
         </a>
     <?php endif; ?>
+    <?php if ($this->options->showRSS) : ?>
+        <a href="<?php $this->options->feedUrl(); ?>" class="link-warning text-decoration-none" target="_blank" title="<?php $this->options->feedUrl(); ?>">
+            <i class="iconfont icon-xinhao fs-5"></i>
+        </a>
+    <?php endif; ?>
 </div>

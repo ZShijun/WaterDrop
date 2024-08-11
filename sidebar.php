@@ -40,12 +40,6 @@
             </section>
         <?php endif; ?>
         <?php $this->need('components/tagcloud.php'); ?>
-        <?php $googleAd = getGoogleAd(); ?>
-        <?php if ($googleAd['showAd'] && !empty($googleAd['sidebar'])) : ?>
-            <ins class="adsbygoogle" style="display:block;text-align:center;overflow:hidden;" data-ad-client="ca-<?= $googleAd['publisher']; ?>" data-ad-slot="<?= $googleAd['sidebar']; ?>" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        <?php endif; ?>
+        <?php showGoogleAd('sidebar', 'mt-3'); ?>
     </aside>
 </div><!-- end #sidebar -->

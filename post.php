@@ -3,6 +3,7 @@
 
 <div class="col-12 col-lg-8 col-xl-9" id="main" role="main">
     <?php $googleAd = getGoogleAd(); ?>
+    <?php showGoogleAd('post1', 'mb-3', true); ?>
     <article class="<?php if (!$googleAd['showAd']) : ?>pjax <?php endif; ?>post bg-white rounded shadow-sm p-3" itemscope itemtype="http://schema.org/BlogPosting">
         <h1 class="text-dark text-center"><?php $this->title() ?></h1>
         <div class="d-flex justify-content-center align-items-center pb-3 mb-4 gap-3 border-bottom small">
@@ -12,22 +13,9 @@
                 <p class="m-0"><i class="set-likes iconfont icon-like-fill" data-cid="<?php $this->cid(); ?>"></i><span class="get-likes ms-1" data-cid="<?php $this->cid(); ?>"><?php $this->likesNum() ?></span></p>
             <?php endif; ?>
         </div>
-
-        <?php if ($googleAd['showAd'] && !empty($googleAd['post1'])) : ?>
-            <ins class="adsbygoogle" style="display:block;text-align:center;overflow:hidden;" data-ad-client="ca-<?= $googleAd['publisher']; ?>" data-ad-slot="<?= $googleAd['post1']; ?>" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        <?php endif; ?>
         <div class="markdown-body post-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
-        <?php if ($googleAd['showAd'] && !empty($googleAd['post2'])) : ?>
-            <ins class="adsbygoogle" style="display:block;text-align:center;overflow:hidden;" data-ad-client="ca-<?= $googleAd['publisher']; ?>" data-ad-slot="<?= $googleAd['post2']; ?>" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        <?php endif; ?>
         <div class="post-copyright my-3 p-3 text-bg-light small border rounded-1">
             <p class="mb-1">
                 <strong><?php _e("本文作者："); ?></strong>
@@ -62,7 +50,7 @@
             </li>
         </ul>
     </article>
-
+    <?php showGoogleAd('post2', 'mt-3'); ?>
     <?php $this->need('comments.php'); ?>
 </div><!-- end #main-->
 

@@ -49,6 +49,17 @@ function themeConfig($form)
     );
     $form->addInput($showEmail);
 
+    $showRSS = new Radio(
+        'showRSS',
+        [
+            0    => _t('隐藏'),
+            1    => _t('显示')
+        ],
+        0,
+        _t('显示 RSS')
+    );
+    $form->addInput($showRSS);
+
     $github = new Text(
         'github',
         null,
@@ -162,6 +173,36 @@ function themeConfig($form)
         _t('请填入包括script标签JS代码，主要是统计、广告等相关的代码')
     );
     $form->addInput($footerJs);
+}
+
+/**
+ * 显示广告
+ * 
+ * @param string $position 广告位置
+ * sidebar: 侧边栏
+ * post1: 文章页第一段
+ * post2: 文章页第二段
+ * @param string $classes 广告容器类名
+ * @param bool $showBg 是否显示背景
+ */
+function showGoogleAd($position, $classes = '', $showBg = false)
+{
+    $style = '';
+    if ($showBg) {
+        $style = 'background-image:url(' . getDefaultCover() . ');background-size:cover;';
+    }
+
+    $googleAd = getGoogleAd();
+    if ($googleAd['showAd'] && !empty($googleAd[$position])) {
+        echo  <<<EOF
+        <section class="rounded overflow-hidden {$classes}">
+            <ins class="adsbygoogle" style="display:block;text-align:center;{$style}" data-ad-client="ca-{$googleAd['publisher']}" data-ad-slot="{$googleAd[$position]}" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+        EOF;
+    }
 }
 
 function getGravatar($email, $s = 96, $d = 'mp', $r = 'g')

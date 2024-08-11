@@ -18,8 +18,8 @@
 }
 
 .link-dark:hover {
-  color: #49b1f5 !important;
-  text-decoration-color: #49b1f5 !important;
+  color: #49b1f5;
+  text-decoration-color: #49b1f5;
 }
 
 #loader {
