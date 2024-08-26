@@ -5,11 +5,16 @@
  *
  * @package WaterDrop
  * @author laozhu
- * @version 1.3.0
+ * @version 1.4.0
  * @link https://ilaozhu.com
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+if (isset($_GET['target'])) {
+    $this->need('redirect.php');
+    exit;
+}
+
 $this->need('header.php');
 ?>
 <div class="col-12 col-lg-8 col-xl-9" id="main" role="main">

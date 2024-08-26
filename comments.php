@@ -3,7 +3,17 @@
 {
 ?>
     <li class="d-flex p-2">
-        <img src="<?= getGravatar($comments->mail); ?>" style="whidth:24px;height:24px;transform:scale(2);" class="rounded shadow-sm">
+
+        <?php
+        $url = getRedirectUrl($comments->url);
+        if ($url["hasUrl"]): ?>
+            <a href="<?= $url["url"] ?>" target="_blank">
+                <img src="<?= getGravatar($comments->mail); ?>" style="whidth:24px;height:24px;transform:scale(2);" class="rounded shadow-sm">
+            </a>
+        <?php else: ?>
+            <img src="<?= getGravatar($comments->mail); ?>" style="whidth:24px;height:24px;transform:scale(2);" class="rounded shadow-sm">
+        <?php endif; ?>
+
         <div id="<?php $comments->theId(); ?>" class="flex-grow-1 overflow-hidden">
             <div>
                 <h5 class="d-flex align-items-center justify-content-between ps-3 mb-3">
@@ -58,13 +68,74 @@
                         </span>
                         <div id="emoji-list" class="border p-2 m-0 rounded row gap-1 row-cols-auto overflow-auto position-absolute bg-light shadow-sm d-none" style="width: 290px;height: 150px; top:-158px;">
                             <?php $emojis = [
-                                '😊', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '🙂', '🙃',
-                                '😉', '😇', '😏', '😌', '😍', '😘', '😗', '😙', '😚', '😋',
-                                '😛', '😜', '😝', '😒', '😔', '😖', '😞', '😟', '😠', '😡',
-                                '😳', '😨', '😰', '😥', '😢', '😭', '😱', '😲', '😵', '😷',
-                                '🤒', '🤕', '🤢', '😴', '🤤', '😪', '😫', '😬', '😮', '🤲',
-                                '🤜', '🤛', '🤚', '🤝', '🙏', '🤞', '🤟', '🤘', '🤙', '👌',
-                                '👍', '👎', '✊', '👊', '👏', '🙌', '👐', '💪'
+                                '😊',
+                                '😃',
+                                '😄',
+                                '😁',
+                                '😆',
+                                '😅',
+                                '😂',
+                                '🤣',
+                                '🙂',
+                                '🙃',
+                                '😉',
+                                '😇',
+                                '😏',
+                                '😌',
+                                '😍',
+                                '😘',
+                                '😗',
+                                '😙',
+                                '😚',
+                                '😋',
+                                '😛',
+                                '😜',
+                                '😝',
+                                '😒',
+                                '😔',
+                                '😖',
+                                '😞',
+                                '😟',
+                                '😠',
+                                '😡',
+                                '😳',
+                                '😨',
+                                '😰',
+                                '😥',
+                                '😢',
+                                '😭',
+                                '😱',
+                                '😲',
+                                '😵',
+                                '😷',
+                                '🤒',
+                                '🤕',
+                                '🤢',
+                                '😴',
+                                '🤤',
+                                '😪',
+                                '😫',
+                                '😬',
+                                '😮',
+                                '🤲',
+                                '🤜',
+                                '🤛',
+                                '🤚',
+                                '🤝',
+                                '🙏',
+                                '🤞',
+                                '🤟',
+                                '🤘',
+                                '🤙',
+                                '👌',
+                                '👍',
+                                '👎',
+                                '✊',
+                                '👊',
+                                '👏',
+                                '🙌',
+                                '👐',
+                                '💪'
                             ];
                             foreach ($emojis as $emoji) : ?>
                                 <span class="col p-0 btn btn-light fs-5" data-emoji="<?= $emoji; ?>"><?= $emoji; ?></span>

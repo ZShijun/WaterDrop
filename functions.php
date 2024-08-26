@@ -310,3 +310,25 @@ function themeFields($layout)
         $layout->addItem($icon);
     }
 }
+
+function getRedirectUrl($url)
+{
+    if (!$url) {
+        return [
+            'hasUrl' => false
+        ];
+    }
+
+    $options = Widget::widget(Options::class);
+    if (str_starts_with($url, $options->siteUrl)) {
+        return [
+            'hasUrl' => true,
+            'url' => $url
+        ];
+    } else {
+        return [
+            'hasUrl' => true,
+            'url' => $options->siteUrl . '?target=' . urlencode($url)
+        ];
+    }
+}
