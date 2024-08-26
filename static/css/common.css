@@ -254,6 +254,7 @@
   color: #666;
   font-size: 1.2rem;
   text-decoration: none;
+  word-wrap: break-word;
 }
 
 .links a:hover {
