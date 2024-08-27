@@ -3,9 +3,9 @@
 
         <section class="rank bg-white rounded shadow-sm mt-3">
             <?php $rank = \TypechoPlugin\LZStat\Plugin::getRank(); ?>
-            <h3 class="px-3 py-2 m-0 fs-6 rounded-top" style="background-color:#e9ecef;"> <i class="iconfont icon-rank text-danger me-2"></i><?= $rank["title"]; ?></h3>
+            <h3 class="px-3 py-2 m-0 fs-6 rounded-top" style="background-color:#e9ecef;"> <i class="iconfont icon-rank text-danger me-2"></i><?= $rank["title"]; ?><?php _e("文章"); ?></h3>
             <?php if (empty($rank["posts"])) : ?>
-                <div class="p-3 text-center text-body-secondary">暂无数据</div>
+                <div class="p-3 text-center text-body-secondary"><?php _e("暂无数据"); ?></div>
             <?php else : ?>
                 <ul class="list-group rounded-bottom p-1">
                     <?php
