@@ -20,7 +20,7 @@
             <h2 class="card-title"><?php _e("离开" . $this->options->title); ?></h2>
             <p class="card-text mt-3"><?php _e("您即将离开" . $this->options->title . "，前往" . $target . "，请注意您的个人隐私和财产安全。") ?></p>
             <div class="text-end pt-3 border-top">
-                <a href="<?php echo $target; ?>" class="btn btn-primary" rel="noopener noreferrer"><?php _e("继续访问"); ?></a>
+                <a href="<?php echo $target; ?>" class="btn btn-dark" rel="noopener noreferrer"><?php _e("继续访问"); ?></a>
             </div>
         </div>
     </div>
