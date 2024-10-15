@@ -15,7 +15,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <h4 class="text-dark pb-3 border-bottom"><?php $this->title() ?></h4>
         <?php $this->content(); ?>
     </article>
-    <?php $this->need('comments.php'); ?>
+    <?php if ($this->allow('comment')) {
+        $this->need('comments.php');
+    } ?>
 </div><!-- end #main-->
 
 <?php $this->need('sidebar.php'); ?>

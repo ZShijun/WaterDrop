@@ -51,7 +51,9 @@
         </ul>
     </article>
     <?php showGoogleAd('post2', 'mt-3'); ?>
-    <?php $this->need('comments.php'); ?>
+    <?php if ($this->allow('comment')) {
+        $this->need('comments.php');
+    } ?>
 </div><!-- end #main-->
 
 <?php $this->need('sidebar.php'); ?>
