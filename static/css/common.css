@@ -351,6 +351,29 @@
   visibility: visible;
 }
 
+.markdown-body pre {
+  position: relative;
+}
+
+.markdown-body pre .copy-code-btn {
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  cursor: pointer;
+  color: #ccc;
+  user-select: none;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.markdown-body pre:hover .copy-code-btn {
+  opacity: 1;
+}
+
+.markdown-body pre .copy-code-btn:hover {
+  filter: brightness(1.2);
+}
+
 @media (min-width: 992px) {
   .offcanvas .navbar-nav .nav-item {
     border-top: none;

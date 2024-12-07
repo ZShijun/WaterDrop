@@ -97,6 +97,29 @@ if ($this->options->footerJs) {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     });
+
+    const pres = document.querySelectorAll(".markdown-body pre");
+    if (pres.length > 0) {
+        pres.forEach(pre => {
+            const code = pre.querySelector("code");
+            const copyBtn = document.createElement("span");
+            copyBtn.classList.add("copy-code-btn");
+            const icon = document.createElement("i");
+            icon.classList.add("iconfont", "icon-copy", "fs-5");
+            copyBtn.appendChild(icon);
+            pre.appendChild(copyBtn);
+            copyBtn.addEventListener("click", () => {
+                const text = code.innerText;
+                navigator.clipboard.writeText(text);
+                icon.classList.remove("icon-copy");
+                icon.classList.add("icon-duihao", "text-success");
+                setTimeout(() => {
+                    icon.classList.remove("icon-duihao", "text-success");
+                    icon.classList.add("icon-copy");
+                }, 2000);
+            });
+        });
+    }
 </script>
 </body>
 
