@@ -142,10 +142,11 @@
                             <?php endforeach ?>
                         </div>
                     </div>
-                    <div class="ms-auto">
-                        <?php $comments->cancelReply('<span class="btn btn-light rounded-pill btn-sm">取消</span>'); ?>
+                    <div class="ms-auto"><?php spam_protection_math(); ?></div>
+                    <div class="ms-2">
+                        <?php $comments->cancelReply('<span class="btn btn-light rounded-pill btn-sm px-3">取消</span>'); ?>
                     </div>
-                    <input type="submit" value="<?php _e('确定'); ?>" class="btn btn-dark rounded-pill btn-sm ms-1"></input>
+                    <input type="submit" value="<?php _e('确定'); ?>" class="btn btn-dark rounded-pill btn-sm px-3 ms-2"></input>
                 </div>
             </form>
         </div>
