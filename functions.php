@@ -129,10 +129,19 @@ function themeConfig($form)
     );
     $form->addInput($defaultCovers);
 
+    $recommendation = new Text(
+        'recommendation',
+        null,
+        0,
+        _t('文章相关推荐'),
+        _t('文章详情页面显示的相关推荐文章数量，填0不显示相关推荐')
+    );
+    $form->addInput($recommendation);
+
     $sidebarBlockValue = [
         'ShowRecentComments' => _t('显示最新评论'),
         'ShowCategory'       => _t('显示文章分类'),
-        'ShowTagCloud'        => _t('显示标签云')
+        'ShowTagCloud'       => _t('显示标签云')
     ];
 
     if (\Typecho\Plugin::exists('LZStat')) {

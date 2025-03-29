@@ -15,6 +15,7 @@
         </div>
         <div class="markdown-body post-content" itemprop="articleBody">
             <?php $this->content(); ?>
+            <?php $this->need('components/related.php'); ?>
         </div>
         <div class="post-copyright my-3 p-3 text-bg-light small border rounded-1">
             <p class="mb-1">
